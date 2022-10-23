@@ -1,3 +1,5 @@
+import jdk.swing.interop.SwingInterOpUtils;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -22,7 +24,7 @@ public class Main {
         //Задача 2
         //27.12 ,  987 678 965 549 , 2,786 , false, 569 , -159 , 27897 , 67.
 
-        System.out.println("");
+        System.out.println();
         System.out.println("Задача 2");
 
         float varFloat_t2 = 27.12f;
@@ -36,31 +38,31 @@ public class Main {
 
 
         //Задача 3
-        System.out.println("");
+        System.out.println();
         System.out.println("Задача 3");
 
-        var firstClassPupils = 23;
-        var secondClassPupils= 27;
-        var thirdClassPupils = 30;
-        var amountOfPapers = 480;
-        var papersForEach = amountOfPapers / (firstClassPupils + secondClassPupils + thirdClassPupils);
+        short firstClassPupils = 23;
+        short secondClassPupils= 27;
+        short thirdClassPupils = 30;
+        short amountOfPapers = 480;
+        int papersForEach = amountOfPapers / (firstClassPupils + secondClassPupils + thirdClassPupils);
 
         System.out.println("На каждого ученика рассчитано " + papersForEach + " листов бумаги.");
-        System.out.println("");
+        System.out.println();
 
 
         //Задача 4
-        System.out.println("");
+        System.out.println();
         System.out.println("Задача 4");
 
-        var bottlesPer2min = 16;
-        var bottlesPer1min = bottlesPer2min / 2;
-        var bottlesFor20min = bottlesPer1min * 20;
-        var bottlesFor1hour = bottlesPer1min * 60;
-        var bottlesFor1day = bottlesFor1hour * 24;
-        var bottlesFor3day = bottlesFor1day * 3;
+        short bottlesPer2min = 16;
+        double bottlesPer1min = bottlesPer2min / 2.0;
+        double bottlesFor20min = bottlesPer1min * 20;
+        double bottlesFor1hour = bottlesPer1min * 60;
+        double bottlesFor1day = bottlesFor1hour * 24;
+        double bottlesFor3day = bottlesFor1day * 3;
         //Примем, что в месяце у нас в среднем 30 дней
-        var bottlesFor1month = bottlesFor1day * 30;
+        double bottlesFor1month = bottlesFor1day * 30;
 
         System.out.println("За 20 минут машины произвела бутылок " + bottlesFor20min + " штук.");
         System.out.println("За сутки машины произвела бутылок " + bottlesFor1day + " штук.");
@@ -68,39 +70,67 @@ public class Main {
         System.out.println("За месяц машины произвела бутылок " + bottlesFor1month + " штук.");
 
         //Задача 5
-        System.out.println("");
+        System.out.println();
         System.out.println("Задача 5");
 
-        var totalCansAmount = 120;
-        var whitePaintCansForClass = 2;
-        var brownPaintCansForClass = 4;
-        var totalPaintCansForClass = whitePaintCansForClass + brownPaintCansForClass;
-        var totalClassAmount = totalCansAmount / totalPaintCansForClass;
-        var totalWhiteCans = whitePaintCansForClass * totalClassAmount;
-        var totalBrownCans = brownPaintCansForClass * totalClassAmount;
+        short totalCansAmount = 120;
+        short whitePaintCansForClass = 2;
+        short brownPaintCansForClass = 4;
+        int totalPaintCansForClass = whitePaintCansForClass + brownPaintCansForClass;
+        int totalClassAmount = totalCansAmount / totalPaintCansForClass;
+        int totalWhiteCans = whitePaintCansForClass * totalClassAmount;
+        int totalBrownCans = brownPaintCansForClass * totalClassAmount;
 
         System.out.println("В школе, где " + totalClassAmount + " классов, нужно " + totalWhiteCans
-                + " банок белой краски и " + totalBrownCans + " банок коричневой краски.");
+        + " банок белой краски и " + totalBrownCans + " банок коричневой краски.");
 
         //Задача 6
-        System.out.println("");
+        System.out.println();
         System.out.println("Задача 6");
 
-        var gramsPerBanana = 80;
-        var gramsPer100Milk = 105;
-        var gramsOfPackIceCream = 100;
-        var gramsPerEgg = 70;
+        short gramsPerBanana = 80;
+        short gramsPer100Milk = 105;
+        short gramsOfPackIceCream = 100;
+        short gramsPerEgg = 70;
 
-        var gramsTotalBanana = gramsPerBanana * 5;
-        var gramsTotalMilk = gramsPer100Milk * 2;
-        var gramsTotalIceCream = gramsOfPackIceCream * 2;
-        var gramsTotalEggs = gramsPerEgg * 4;
+        int gramsTotalBanana = gramsPerBanana * 5;
+        int gramsTotalMilk = gramsPer100Milk * 2;
+        int gramsTotalIceCream = gramsOfPackIceCream * 2;
+        int gramsTotalEggs = gramsPerEgg * 4;
 
-        var gramsTotalWight = gramsTotalBanana + gramsTotalMilk + gramsTotalIceCream + gramsTotalEggs;
-        var kgTotalWight = gramsTotalWight / 1000.0;
+        int gramsTotalWeight = gramsTotalBanana + gramsTotalMilk + gramsTotalIceCream + gramsTotalEggs;
+        double kgTotalWeight = gramsTotalWeight / 1000.0;
 
-        System.out.println("Общий вес спортивного завтрака составляет : " + kgTotalWight + " kg.");
+        System.out.println("Общий вес спортивного завтрака составляет : " + kgTotalWeight + " kg.");
 
+        //Задача 7
+        System.out.println();
+        System.out.println("Задача 7");
+
+        byte kgTotalLoseWeight = 7;
+        int gramsTotalLoseWeight = kgTotalLoseWeight * 1000;
+        double daysPer250grams = gramsTotalLoseWeight / 250.0;
+        double daysPer500grams = gramsTotalLoseWeight / 500.0;
+        double averageDaysToLoseWeight = (daysPer250grams + daysPer500grams) / 2.0;
+
+        System.out.println("Для того чтобы спортсмен потерял 7 кг. по текущей программе в среднеим понадобится "
+        + averageDaysToLoseWeight + " дней.");
+
+        //Задача 8
+        System.out.println();
+        System.out.println("Задача 8");
+
+        double salaryMasha = 67760;
+        double salaryDenis = 83690;
+        double salaryKristina = 76230;
+
+        double newSalaryMasha = salaryMasha + salaryMasha * 0.1;
+        double newSalaryDenis = salaryDenis + salaryDenis * 0.1 ;
+        double newSalaryKristina = salaryKristina + salaryKristina * 0.1;
+
+        System.out.println("Маша теперь получает " + newSalaryMasha + " рублей. Годовой доход вырос на " + (newSalaryMasha - salaryMasha) + " рублей");
+        System.out.println("Денис теперь получает " + newSalaryDenis + " рублей. Годовой доход вырос на " + (newSalaryDenis - salaryDenis) + " рублей");
+        System.out.println("Кристина теперь получает " + newSalaryKristina + " рублей. Годовой доход вырос на " + (newSalaryKristina - salaryKristina) + " рублей");
 
 
     }
